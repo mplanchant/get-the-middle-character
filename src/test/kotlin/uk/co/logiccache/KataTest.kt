@@ -1,14 +1,17 @@
 package uk.co.logiccache
 
+import io.kotlintest.matchers.startWith
+import io.kotlintest.should
 import io.kotlintest.shouldBe
 import io.kotlintest.shouldThrow
 import io.kotlintest.specs.StringSpec
 
 class KataTest : StringSpec({
     "empty string should throw exception" {
-        shouldThrow<AssertionError> {
+        val exception = shouldThrow<IllegalStateException> {
             getMiddle("")
         }
+        exception.message should startWith("input must contain at least one character")
     }
     "single character returns that character" {
         getMiddle("a") shouldBe "a"
@@ -18,5 +21,8 @@ class KataTest : StringSpec({
     }
     "'gruff' returns 'u'" {
         getMiddle("gruff") shouldBe "u"
+    }
+    "'martha' returns 'rt'" {
+        getMiddle("martha") shouldBe "rt"
     }
 })
