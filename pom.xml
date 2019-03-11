@@ -17,6 +17,7 @@
         <kotlin.code.style>official</kotlin.code.style>
         <kotlintest-runner-junit5.version>3.3.1</kotlintest-runner-junit5.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+        <slf4j-simple.version>1.7.26</slf4j-simple.version>
     </properties>
 
     <dependencies>
@@ -29,6 +30,12 @@
             <groupId>io.kotlintest</groupId>
             <artifactId>kotlintest-runner-junit5</artifactId>
             <version>${kotlintest-runner-junit5.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-simple.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
